@@ -1,0 +1,72 @@
+----------------------------------------------------------------------------------------------------
+EJEMPLO TRADUCCION:
+
+from googletrans import Translator
+translater = Translator()
+
+translate_text = "Buenos días"
+text = translater.translate(translate_text, dest="tl").text
+bot.send_message(message.chat.id, text)
+
+
+Send EMAIL, OJO van directos a la carpeta de SPAM!!!!!!!!!!!!!!!
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+
+    bot.send_message(user_message.chat.id, "Logins")
+    mail_content = "Hello," \
+                   " This is a simple mail." \
+                   "Thank You"
+    sender_address = 'fitbotweb@gmail.com'
+    sender_pass = 'FLATRONL1919s-_-'
+    receiver_address = 'felixjcalvo@gmail.com'
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'A test mail sent by Python. It has an attachment.'  # The subject line
+    # The body and the attachments for the mail
+    message.attach(MIMEText(mail_content, 'plain'))
+    # Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587)  # use gmail with port
+    session.starttls()  # enable security
+    session.login(sender_address, sender_pass)  # login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    print('Mail Sent')
+----------------------------------------------------------------------------------------------------
+Para mostrar opciones en pantalla
+Step #6: https://www.mindk.com/blog/how-to-develop-a-chat-bot/
+https://core.telegram.org/bots/api#inlinekeyboardmarkupç
+
+# este código va dentro de algún metodo
+        keyboard = [
+            [
+                InlineKeyboardButton("Option 1", callback_data='A'),
+                InlineKeyboardButton("Option 2", callback_data='B'),
+            ]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        bot.send_message(message.chat.id, "test", reply_markup=reply_markup)
+
+# Handler inlinekeyboardmarkup
+# @bot.callback_query_handler(func=lambda message: True)
+# def query_text(inline_query):
+#     try:
+#         r = types.InlineQueryResultArticle('1', 'Result', types.InputTextMessageContent('Result message.'))
+#         r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('Result message2.'))
+#         bot.answer_inline_query(inline_query.id, [r, r2])
+#     except Exception as e:
+#         print(e)
+----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
